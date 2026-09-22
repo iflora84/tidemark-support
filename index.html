@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tidemark Support</title>
+<style>
+  :root {
+    --bg: #F7F5F0;
+    --elevated: #FFFFFF;
+    --ink: #16171A;
+    --ink2: #63625E;
+    --ink3: #A09D96;
+    --hairline: #E3E0D9;
+    --accent: #0B6E99;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0E1012;
+      --elevated: #181B1F;
+      --ink: #EDE9E1;
+      --ink2: #A19E97;
+      --ink3: #5E6167;
+      --hairline: #2A2D31;
+      --accent: #5CB8E6;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 48px 20px 80px;
+    background: var(--bg);
+    color: var(--ink);
+    font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+  main { max-width: 640px; margin: 0 auto; }
+  h1 { font-size: 34px; font-weight: 700; letter-spacing: -0.4px; margin: 0 0 4px; }
+  .tagline { color: var(--ink2); margin: 0 0 40px; }
+  h2 {
+    font-size: 13px; font-weight: 600; letter-spacing: 0.6px; text-transform: uppercase;
+    color: var(--ink2); margin: 40px 0 12px;
+  }
+  h3 { font-size: 17px; font-weight: 600; margin: 24px 0 6px; }
+  p { margin: 0 0 14px; }
+  a { color: var(--accent); }
+  .card {
+    background: var(--elevated);
+    border: 1px solid var(--hairline);
+    border-radius: 12px;
+    padding: 20px 22px;
+  }
+  .card h3:first-child { margin-top: 0; }
+  ul { margin: 0 0 14px; padding-left: 22px; }
+  li { margin-bottom: 6px; }
+  footer {
+    margin-top: 48px; padding-top: 20px;
+    border-top: 1px solid var(--hairline);
+    color: var(--ink3); font-size: 13px;
+  }
+  footer a { color: var(--ink3); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Tidemark</h1>
+  <p class="tagline">NOAA tide times on your Home Screen and Lock Screen.</p>
+
+  <h2>Contact</h2>
+  <div class="card">
+    <p style="margin:0">Email <a href="mailto:zhenyitong84@gmail.com">zhenyitong84@gmail.com</a>. Include your station name or ID and what you expected to see. Replies usually arrive within two business days.</p>
+  </div>
+
+  <h2>Common questions</h2>
+  <div class="card">
+    <h3>How do I add the widget?</h3>
+    <p>Touch and hold an empty area of the Home Screen, tap the <strong>+</strong> button, search for Tidemark, then pick a size. For the Lock Screen, touch and hold the Lock Screen, tap Customize, then add Tidemark to a widget slot.</p>
+
+    <h3>Can each widget show a different station?</h3>
+    <p>Yes. Touch and hold a widget, choose Edit Widget, then tap Station and search. Leave it on App's Station to follow whatever the app is showing.</p>
+
+    <h3>Why is my station not listed?</h3>
+    <p>Tidemark includes every NOAA tide prediction station in the United States and its territories, about 3,400 of them. Stations outside the NOAA network are not available. Try searching by the nearest town, by two-letter state code, or by the seven-character station ID.</p>
+
+    <h3>The widget shows old data.</h3>
+    <p>Widgets refresh a few times a day, and iOS decides exactly when. Open the app and pull down to refresh, which updates the shared cache the widget reads. If the widget says Offline, the device could not reach NOAA the last time it tried.</p>
+
+    <h3>Why are some heights negative?</h3>
+    <p>Heights are measured from Mean Lower Low Water, the datum used on United States nautical charts. Water levels below that reference are normal and appear as negative numbers.</p>
+
+    <h3>How accurate are the times?</h3>
+    <p>Predictions come directly from NOAA and are computed from harmonic constants. They are predictions, not observations. Weather, barometric pressure and river flow all shift the real water level. Do not use Tidemark for navigation.</p>
+
+    <h3>Which time zone is used?</h3>
+    <p>All times are shown in your device's time zone, so a station on the other coast displays in your local clock time.</p>
+
+    <h3>Does Tidemark use my location?</h3>
+    <p>Only when you tap Find nearest stations in the station picker. The fix is used once to sort the station list and is never stored or transmitted. See the <a href="privacy.html">privacy policy</a>.</p>
+  </div>
+
+  <h2>Data source</h2>
+  <p>Tide predictions come from the <a href="https://tidesandcurrents.noaa.gov">NOAA Center for Operational Oceanographic Products and Services</a>. Predictions are computed by NOAA from harmonic constants and are not observations. Tidemark is not affiliated with or endorsed by NOAA.</p>
+
+  <footer>
+    <p><a href="privacy.html">Privacy policy</a></p>
+    <p>Not for navigation.</p>
+  </footer>
+</main>
+</body>
+</html>
