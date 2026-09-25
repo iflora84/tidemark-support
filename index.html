@@ -3,7 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tidemark Support</title>
+<title>Tidemark – NOAA Tide Widget for iPhone</title>
+<meta name="description" content="Next high and low tide on your iPhone Lock Screen and Home Screen. Official NOAA predictions for 3,000+ US stations. $3.99 once. No subscription, no ads, no account.">
+<meta name="apple-itunes-app" content="app-id=6813248692">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Tidemark – the next tide, on your Lock Screen">
+<meta property="og:description" content="Official NOAA tide predictions for 3,000+ US stations. One price, no subscription, no ads, no account.">
+<meta property="og:url" content="https://iflora84.github.io/tidemark-support/">
+<meta property="og:image" content="https://iflora84.github.io/tidemark-support/img/1-today.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="img/icon.png">
+<link rel="apple-touch-icon" href="img/icon.png">
 <style>
   :root {
     --bg: #F7F5F0;
@@ -13,6 +23,8 @@
     --ink3: #A09D96;
     --hairline: #E3E0D9;
     --accent: #0B6E99;
+    --button-bg: #16171A;
+    --button-ink: #FFFFFF;
   }
   @media (prefers-color-scheme: dark) {
     :root {
@@ -23,86 +35,127 @@
       --ink3: #5E6167;
       --hairline: #2A2D31;
       --accent: #5CB8E6;
+      --button-bg: #EDE9E1;
+      --button-ink: #0E1012;
     }
   }
   * { box-sizing: border-box; }
   body {
     margin: 0;
-    padding: 48px 20px 80px;
+    padding: 56px 20px 80px;
     background: var(--bg);
     color: var(--ink);
     font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   }
-  main { max-width: 640px; margin: 0 auto; }
-  h1 { font-size: 34px; font-weight: 700; letter-spacing: -0.4px; margin: 0 0 4px; }
-  .tagline { color: var(--ink2); margin: 0 0 40px; }
+  main { max-width: 760px; margin: 0 auto; }
+  a { color: var(--accent); }
+
+  .hero { text-align: center; }
+  .icon { width: 96px; height: 96px; border-radius: 22px; border: 1px solid var(--hairline); }
+  h1 { font-size: 44px; line-height: 1.1; font-weight: 700; letter-spacing: -0.8px; margin: 20px 0 12px; }
+  .lede { color: var(--ink2); font-size: 19px; max-width: 520px; margin: 0 auto 28px; }
+  .cta {
+    display: inline-block;
+    background: var(--button-bg);
+    color: var(--button-ink);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 14px 26px;
+    border-radius: 12px;
+  }
+  .price { color: var(--ink3); font-size: 14px; margin: 12px 0 0; }
+
+  .shots {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    margin: 56px -20px 0;
+    padding: 0 20px 12px;
+  }
+  .shots img {
+    flex: 0 0 auto;
+    width: 220px;
+    height: auto;
+    border-radius: 20px;
+    border: 1px solid var(--hairline);
+    scroll-snap-align: center;
+  }
+
   h2 {
     font-size: 13px; font-weight: 600; letter-spacing: 0.6px; text-transform: uppercase;
-    color: var(--ink2); margin: 40px 0 12px;
+    color: var(--ink2); margin: 56px 0 16px;
   }
-  h3 { font-size: 17px; font-weight: 600; margin: 24px 0 6px; }
-  p { margin: 0 0 14px; }
-  a { color: var(--accent); }
+  .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
   .card {
     background: var(--elevated);
     border: 1px solid var(--hairline);
     border-radius: 12px;
     padding: 20px 22px;
   }
-  .card h3:first-child { margin-top: 0; }
-  ul { margin: 0 0 14px; padding-left: 22px; }
-  li { margin-bottom: 6px; }
+  .card h3 { font-size: 17px; font-weight: 600; margin: 0 0 6px; }
+  .card p { margin: 0; color: var(--ink2); }
+  .for { margin: 0; color: var(--ink2); }
+
   footer {
-    margin-top: 48px; padding-top: 20px;
+    margin-top: 64px; padding-top: 20px;
     border-top: 1px solid var(--hairline);
     color: var(--ink3); font-size: 13px;
   }
+  footer p { margin: 0 0 8px; }
   footer a { color: var(--ink3); }
+
+  @media (max-width: 480px) {
+    h1 { font-size: 34px; }
+    .shots img { width: 180px; }
+    .grid { grid-template-columns: 1fr; }
+  }
 </style>
 </head>
 <body>
 <main>
-  <h1>Tidemark</h1>
-  <p class="tagline">NOAA tide times on your Home Screen and Lock Screen.</p>
+  <section class="hero">
+    <img class="icon" src="img/icon.png" alt="Tidemark app icon" width="96" height="96">
+    <h1>The next tide,<br>on your Lock Screen.</h1>
+    <p class="lede">Tidemark puts the next high and low tide on your iPhone Lock Screen and Home Screen. The predictions come straight from NOAA and cover more than 3,000 US stations.</p>
+    <a class="cta" href="https://apps.apple.com/us/app/tidemark-noaa-tide-widget/id6813248692">Download on the App Store</a>
+    <p class="price">$3.99 once. No subscription, no ads, no account.</p>
+  </section>
 
-  <h2>Contact</h2>
-  <div class="card">
-    <p style="margin:0">Email <a href="mailto:zhenyitong84@gmail.com">zhenyitong84@gmail.com</a>. Include your station name or ID and what you expected to see. Replies usually arrive within two business days.</p>
+  <div class="shots">
+    <img src="img/1-today.png" alt="Today screen showing the next high tide and a 24-hour tide curve" loading="lazy">
+    <img src="img/2-table.png" alt="Seven-day table of high and low tides" loading="lazy">
+    <img src="img/3-picker.png" alt="Station search results for San" loading="lazy">
+    <img src="img/4-nearby.png" alt="Station picker with nearby, favorite and popular stations" loading="lazy">
+    <img src="img/5-settings.png" alt="Settings for units, clock format and data refresh" loading="lazy">
   </div>
 
-  <h2>Common questions</h2>
-  <div class="card">
-    <h3>How do I add the widget?</h3>
-    <p>Touch and hold an empty area of the Home Screen, tap the <strong>+</strong> button, search for Tidemark, then pick a size. For the Lock Screen, touch and hold the Lock Screen, tap Customize, then add Tidemark to a widget slot.</p>
-
-    <h3>Can each widget show a different station?</h3>
-    <p>Yes. Touch and hold a widget, choose Edit Widget, then tap Station and search. Leave it on App's Station to follow whatever the app is showing.</p>
-
-    <h3>Why is my station not listed?</h3>
-    <p>Tidemark includes every NOAA tide prediction station in the United States and its territories, about 3,400 of them. Stations outside the NOAA network are not available. Try searching by the nearest town, by two-letter state code, or by the seven-character station ID.</p>
-
-    <h3>The widget shows old data.</h3>
-    <p>Widgets refresh a few times a day, and iOS decides exactly when. Open the app and pull down to refresh, which updates the shared cache the widget reads. If the widget says Offline, the device could not reach NOAA the last time it tried.</p>
-
-    <h3>Why are some heights negative?</h3>
-    <p>Heights are measured from Mean Lower Low Water, the datum used on United States nautical charts. Water levels below that reference are normal and appear as negative numbers.</p>
-
-    <h3>How accurate are the times?</h3>
-    <p>Predictions come directly from NOAA and are computed from harmonic constants. They are predictions, not observations. Weather, barometric pressure and river flow all shift the real water level. Do not use Tidemark for navigation.</p>
-
-    <h3>Which time zone is used?</h3>
-    <p>All times are shown in your device's time zone, so a station on the other coast displays in your local clock time.</p>
-
-    <h3>Does Tidemark use my location?</h3>
-    <p>Only when you tap Find nearest stations in the station picker. The fix is used once to sort the station list and is never stored or transmitted. See the <a href="privacy.html">privacy policy</a>.</p>
+  <h2>Why Tidemark</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>See it without opening an app</h3>
+      <p>Lock Screen and Home Screen widgets show the next tide, its height and how long until it turns. Each widget can follow a different station.</p>
+    </div>
+    <div class="card">
+      <h3>Official NOAA data</h3>
+      <p>Predictions come directly from NOAA CO-OPS, with a 24-hour curve and a seven-day table of highs and lows.</p>
+    </div>
+    <div class="card">
+      <h3>Works offline</h3>
+      <p>Predictions are cached on your phone, so the week ahead is still there when you lose signal at the beach or on the water.</p>
+    </div>
+    <div class="card">
+      <h3>Private by design</h3>
+      <p>There's no account, no analytics and no tracking. Location is only used when you ask for nearby stations, and it never leaves your phone. <a href="privacy.html">Privacy policy</a></p>
+    </div>
   </div>
 
-  <h2>Data source</h2>
-  <p>Tide predictions come from the <a href="https://tidesandcurrents.noaa.gov">NOAA Center for Operational Oceanographic Products and Services</a>. Predictions are computed by NOAA from harmonic constants and are not observations. Tidemark is not affiliated with or endorsed by NOAA.</p>
+  <h2>Made for</h2>
+  <p class="for">Anglers timing the tide change, surfers checking the swell window, kayakers planning a paddle, tidepoolers and clam diggers waiting for a minus tide, and anyone launching a boat from a shallow ramp.</p>
 
   <footer>
-    <p><a href="privacy.html">Privacy policy</a></p>
-    <p>Not for navigation.</p>
+    <p><a href="support.html">Support and FAQ</a> · <a href="privacy.html">Privacy policy</a> · <a href="mailto:zhenyitong84@gmail.com">zhenyitong84@gmail.com</a></p>
+    <p>Tide predictions from NOAA. Tidemark is not affiliated with or endorsed by NOAA. Not for navigation.</p>
   </footer>
 </main>
 </body>
